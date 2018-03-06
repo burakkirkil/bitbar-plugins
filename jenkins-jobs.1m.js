@@ -124,6 +124,11 @@ function handleJob(data) {
 
     const date = new Date(data.timestamp)
 
+    if (data.result !== 'SUCCESS' ) {
+      PRINT.push(`-- 💻 Console Output | href=${data.url}console`)
+      PRINT.push(`-- ---`)
+    }
+
     PRINT.push(`-- ⏱ ${date.toLocaleString()}`)
     PRINT.push(`-- ---`)
     PRINT.push(`-- 🕓 Changes | href=${getUrl(data.name)}/changes`)
